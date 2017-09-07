@@ -1,7 +1,7 @@
 <template>
   <ul>
     <li v-for="todo in todos">
-      {{todo.text}} <button>x</button>
+      {{todo.id}}-{{todo.text}} <button @click="deleteTodo(todo)">x</button>
     </li>
   </ul>
 </template>
@@ -14,6 +14,12 @@ import {mapActions} from 'vuex';
     computed: {
       todos () {
         return this.$store.state.todos
+      }
+    },
+    methods: {
+      deleteTodo (todo) {
+        console.log('component deleteTodo')
+        this.$store.dispatch('deleteTodo', todo)
       }
     }
   }

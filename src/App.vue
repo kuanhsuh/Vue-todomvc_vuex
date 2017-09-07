@@ -2,7 +2,7 @@
   <div id="app">
     <img src="./assets/logo.png">
     <h1>TodoMVC with Vuex</h1>
-    <input type="text" v-model="inputTodo">{{inputTodo}}
+    <input type="text" v-model="inputTodo" required>{{inputTodo}}
     <button @click="addTodo">Add Todo</button>
     <item></item>
   </div>
