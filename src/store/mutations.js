@@ -3,6 +3,10 @@ export const state = {
     {
       id: 1,
       text: "learn vue"
+    },
+    {
+      id: 2,
+      text: "learn css"
     }
   ]
 }
@@ -15,23 +19,22 @@ export const mutations = {
       text: payload
     })
   },
+  editTodo (state, payload) {
+    payload.todo.text = payload.value
+  },
   deleteTodo (state, payload) {
-    console.log('mutation deleteTodo')
     state.todos.splice(state.todos.indexOf(payload), 1)
   }
 }
 
-  // deleteTodo (state, { todo }) {
-  //   state.todos.splice(state.todos.indexOf(todo), 1)
-  // },
-
 export const actions = {
   addTodo (context, payload) {
-    console.log('action addTodo');
     context.commit('addTodo', payload)
   },
   deleteTodo (context, payload) {
-    console.log('action deleteTodo');
     context.commit('deleteTodo', payload)
+  },
+  editTodo (context, payload) {
+    context.commit('editTodo', payload)
   }
 }

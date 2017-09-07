@@ -2,13 +2,17 @@
   <div id="app">
     <img src="./assets/logo.png">
     <h1>TodoMVC with Vuex</h1>
-    <input type="text" v-model="inputTodo" required>{{inputTodo}}
+    <input type="text" v-model="inputTodo">{{inputTodo}}
     <button @click="addTodo">Add Todo</button>
-    <item></item>
+    <ul>
+    <item v-for="(todo, index) in todos" :key="index" :todo="todo"></item>
+    </ul>
   </div>
 </template>
 
 <script>
+// <todo v-for="(todo, index) in filteredTodos" :key="index" :todo="todo"></todo>
+//
 import item from './components/item.vue'
 
 export default {
