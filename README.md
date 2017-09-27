@@ -1,6 +1,8 @@
+# Vue + Vuex TodoMVC App
 
-Demo: needless-sea.surge.sh
+## Introduction
+This is a basic vue + vuex todo app. Just to play around with vuex.
+demo: http://vuextodomvc.surge.sh
 
-Missing Feature:
-- toggle all
-- bind item
+## Screenshot
+![](https://github.com/kuanhsuh/netflix-clonev2/blob/master/Demo.gif?raw=true)
