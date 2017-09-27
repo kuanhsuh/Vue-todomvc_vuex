@@ -13,7 +13,6 @@ export const state = {
 
 export const mutations = {
   addTodo (state, payload) {
-    console.log('mutation addTodo');
     state.todos.push({
       id: state.todos.length+1,
       text: payload
@@ -37,4 +36,8 @@ export const actions = {
   editTodo (context, payload) {
     context.commit('editTodo', payload)
   }
+}
+
+export const getters = {
+  todos: state => state.todos
 }

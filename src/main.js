@@ -2,9 +2,11 @@ import Vue from 'vue'
 import App from './App.vue'
 import store from './store'
 
-window.store = store
-new Vue({
+const app = new Vue({
   store,
   el: '#app',
   render: h => h(App)
 })
+
+window.vue = app
+window.store = store

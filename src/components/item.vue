@@ -2,7 +2,7 @@
     <li>
       {{todo.id}}-{{todo.text}} <button @click="deleteTodo(todo)">x</button>
       <button @click="toggleUpate">update</button>
-      <input type="text" v-model="editInput" v-if="showUpdate">
+      <input type="text" :placeholder="todo.text" v-model="editInput" v-if="showUpdate">
       <button
         v-if="showUpdate"
         @click="editTodo(todo, editInput)">
@@ -26,7 +26,7 @@ import {mapActions} from 'vuex';
     },
     computed: {
       todos () {
-        return this.$store.state.todos
+        return this.$store.getters.todos
       }
     },
     methods: {
